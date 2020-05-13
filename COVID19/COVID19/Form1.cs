@@ -17,8 +17,7 @@ namespace COVID19
         {
             gestora = new Gestora();
 
-            dataGridViewPacientesCargoMedico.AutoGenerateColumns = false;
-            dataGridViewPacientesCargoMedico.ColumnCount = 2;
+
         }
 
 
@@ -30,7 +29,41 @@ namespace COVID19
 
         private void buttonRegMedico_Click(object sender, EventArgs e)
         {
-            
+
+
+            foreach (DataGridViewRow dgvRenglon in dataGridViewPacientesCargoMedico.Rows)
+            {
+                DataTable temp = new DataTable();
+                if (dgvRenglon.Selected)
+                {
+                    gestora.pacientesMedicosLista.Rows.Add(
+                   dgvRenglon.Cells[0].Value.ToString(),
+                   dgvRenglon.Cells[1].Value.ToString(),
+                   int.Parse(dgvRenglon.Cells[2].Value.ToString()),
+                   dgvRenglon.Cells[3].Value.ToString(),
+                   dgvRenglon.Cells[4].Value.ToString(),
+                   dgvRenglon.Cells[5].Value.ToString(),
+                   int.Parse(dgvRenglon.Cells[6].Value.ToString()),
+                   dgvRenglon.Cells[7].Value.ToString(),
+                   int.Parse(dgvRenglon.Cells[8].Value.ToString())
+                   );                                                    
+
+
+                }
+
+            }
+
+
+            gestora.RegistrarMedico(
+                textBoxDNIM.Text,
+                textBoxNombreCompletoM.Text,
+                textBoxNumeroColegiatura.Text,
+                int.Parse(textBoxEdadM.Text),
+                comboBoxSexo.SelectedItem.ToString(),
+                textBoxEspecialidad.Text,
+                int.Parse(textBoxFechaCole.Text),
+                gestora.pacientesMedicosLista
+                );
             dataGridViewMedicos.DataSource = gestora.medicos;
         }
 
@@ -44,18 +77,18 @@ namespace COVID19
                 comboBoxSexoPaciente.SelectedItem.ToString(),
                 textBoxCelular.Text,
                 comboBoxDistrito.SelectedItem.ToString(),
-                int.Parse(textBoxFechaInternamiento.Text),
+                int.Parse(textBoxFechaCole.Text),
                 comboBoxEstadoPaciente.SelectedItem.ToString(),
-                int.Parse(textBoxFechaInternamiento.Text)
+                int.Parse(textBoxFechaCole.Text)
                 );
 
             dataGridViewPacientes.DataSource = gestora.pacientes;
 
 
-            dataGridViewPacientesCargoMedico.Columns[0].HeaderText = "DNI";
-            dataGridViewPacientesCargoMedico.Columns[0].DataPropertyName = "DNI";
-            dataGridViewPacientesCargoMedico.Columns[1].HeaderText = "NombreCompleto";
-            dataGridViewPacientesCargoMedico.Columns[1].DataPropertyName = "NombreCompleto";
+            //dataGridViewPacientesCargoMedico.Columns[0].HeaderText = "DNI";
+            //dataGridViewPacientesCargoMedico.Columns[0].DataPropertyName = "DNI";
+            //dataGridViewPacientesCargoMedico.Columns[1].HeaderText = "NombreCompleto";
+            //dataGridViewPacientesCargoMedico.Columns[1].DataPropertyName = "NombreCompleto";
             dataGridViewPacientesCargoMedico.DataSource = gestora.pacientesMedicos;
         }
     }

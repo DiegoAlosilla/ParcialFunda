@@ -16,13 +16,15 @@ namespace COVID19
         public DataTable pacientesMedicos;
         public Medico medico;
 
+        public List<Paciente> pacientesMedicosLista;
+
 
 
         public Gestora()
         {
             pacientes = new DataTable();
             pacientesMedicos = new DataTable();
-
+            pacientesMedicosLista = new List<Paciente>();
 
 
             pacientes.Columns.Add("DNI");
@@ -97,13 +99,13 @@ namespace COVID19
 
 
 
-        public void RegistrarMedico(string dNI, string nombreCompleto, string numeroColegiatura, int edad, string sexo, string especialidad, int fechaColegiatura, List<Paciente> _pacientes)
+        public void RegistrarMedico(string dNI, string nombreCompleto, string numeroColegiatura, int edad, string sexo, string especialidad, int fechaColegiatura, DataTable _pacientes)
         {
 
             medico = new Medico(dNI, nombreCompleto, numeroColegiatura, edad, sexo, especialidad, fechaColegiatura, _pacientes);
                         
             medicos.Rows.Add(
-                     medico.DNI, medico.NombreCompleto, medico.NumeroColegiatura, medico.Edad, medico.Sexo, medico.Especialidad, medico.FechaColegiatura, medico.Pacientes.Count()
+                     medico.DNI, medico.NombreCompleto, medico.NumeroColegiatura, medico.Edad, medico.Sexo, medico.Especialidad, medico.FechaColegiatura, medico.Pacientes.Rows.Count()
                );
         }
 

@@ -56,9 +56,9 @@
             this.comboBoxSexo = new System.Windows.Forms.ComboBox();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxFechaInternamiento = new System.Windows.Forms.TextBox();
+            this.textBoxFechaCole = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxNumeroCelular = new System.Windows.Forms.TextBox();
+            this.textBoxEspecialidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxEdadM = new System.Windows.Forms.TextBox();
@@ -286,9 +286,9 @@
             this.tabPage1.Controls.Add(this.comboBoxSexo);
             this.tabPage1.Controls.Add(this.comboBoxEstado);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.textBoxFechaInternamiento);
+            this.tabPage1.Controls.Add(this.textBoxFechaCole);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBoxNumeroCelular);
+            this.tabPage1.Controls.Add(this.textBoxEspecialidad);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.textBoxEdadM);
@@ -381,12 +381,12 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Estado";
             // 
-            // textBoxFechaInternamiento
+            // textBoxFechaCole
             // 
-            this.textBoxFechaInternamiento.Location = new System.Drawing.Point(152, 222);
-            this.textBoxFechaInternamiento.Name = "textBoxFechaInternamiento";
-            this.textBoxFechaInternamiento.Size = new System.Drawing.Size(121, 20);
-            this.textBoxFechaInternamiento.TabIndex = 13;
+            this.textBoxFechaCole.Location = new System.Drawing.Point(152, 222);
+            this.textBoxFechaCole.Name = "textBoxFechaCole";
+            this.textBoxFechaCole.Size = new System.Drawing.Size(121, 20);
+            this.textBoxFechaCole.TabIndex = 13;
             // 
             // label7
             // 
@@ -397,12 +397,12 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Fecha Internamiento";
             // 
-            // textBoxNumeroCelular
+            // textBoxEspecialidad
             // 
-            this.textBoxNumeroCelular.Location = new System.Drawing.Point(152, 196);
-            this.textBoxNumeroCelular.Name = "textBoxNumeroCelular";
-            this.textBoxNumeroCelular.Size = new System.Drawing.Size(121, 20);
-            this.textBoxNumeroCelular.TabIndex = 9;
+            this.textBoxEspecialidad.Location = new System.Drawing.Point(152, 196);
+            this.textBoxEspecialidad.Name = "textBoxEspecialidad";
+            this.textBoxEspecialidad.Size = new System.Drawing.Size(121, 20);
+            this.textBoxEspecialidad.TabIndex = 9;
             // 
             // label5
             // 
@@ -545,9 +545,9 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxFechaInternamiento;
+        private System.Windows.Forms.TextBox textBoxFechaCole;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxNumeroCelular;
+        private System.Windows.Forms.TextBox textBoxEspecialidad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxEdadM;
