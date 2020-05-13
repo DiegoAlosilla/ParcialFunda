@@ -16,7 +16,7 @@ namespace COVID19
         public DataTable pacientesMedicos;
         public Medico medico;
 
-        public List<Paciente> pacientesMedicosLista;
+        public DataTable pacientesMedicosLista;
 
 
 
@@ -24,7 +24,7 @@ namespace COVID19
         {
             pacientes = new DataTable();
             pacientesMedicos = new DataTable();
-            pacientesMedicosLista = new List<Paciente>();
+            pacientesMedicosLista = new DataTable();
 
 
             pacientes.Columns.Add("DNI");
@@ -105,7 +105,7 @@ namespace COVID19
             medico = new Medico(dNI, nombreCompleto, numeroColegiatura, edad, sexo, especialidad, fechaColegiatura, _pacientes);
                         
             medicos.Rows.Add(
-                     medico.DNI, medico.NombreCompleto, medico.NumeroColegiatura, medico.Edad, medico.Sexo, medico.Especialidad, medico.FechaColegiatura, medico.Pacientes.Rows.Count()
+                     medico.DNI, medico.NombreCompleto, medico.NumeroColegiatura, medico.Edad, medico.Sexo, medico.Especialidad, medico.FechaColegiatura, medico.Pacientes.Rows.Count
                );
         }
 

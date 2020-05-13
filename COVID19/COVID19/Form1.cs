@@ -77,9 +77,9 @@ namespace COVID19
                 comboBoxSexoPaciente.SelectedItem.ToString(),
                 textBoxCelular.Text,
                 comboBoxDistrito.SelectedItem.ToString(),
-                int.Parse(textBoxFechaCole.Text),
+                int.Parse(textBoxFechInterna.Text),
                 comboBoxEstadoPaciente.SelectedItem.ToString(),
-                int.Parse(textBoxFechaCole.Text)
+                int.Parse(textBoxFechInterna.Text)
                 );
 
             dataGridViewPacientes.DataSource = gestora.pacientes;

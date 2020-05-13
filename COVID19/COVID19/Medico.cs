@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,9 @@ namespace COVID19
         public string Sexo { get; set; }
         public string Especialidad { get; set; }
         public int FechaColegiatura { get; set; }
-        public List<Paciente> Pacientes { get; set; }
+        public DataTable Pacientes { get; set; }
 
-        public Medico(string dNI, string nombreCompleto, string numeroColegiatura, int edad, string sexo, string especialidad, int fechaColegiatura, List<Paciente> pacientes)
+        public Medico(string dNI, string nombreCompleto, string numeroColegiatura, int edad, string sexo, string especialidad, int fechaColegiatura, DataTable pacientes)
         {
             DNI = dNI;
             NombreCompleto = nombreCompleto;
