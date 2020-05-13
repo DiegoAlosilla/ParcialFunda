@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace COVID19
 {
@@ -11,11 +13,16 @@ namespace COVID19
 
 
         public DataTable medicos;
+        public DataTable pacientesMedicos;
         public Medico medico;
+
+
 
         public Gestora()
         {
             pacientes = new DataTable();
+            pacientesMedicos = new DataTable();
+
 
 
             pacientes.Columns.Add("DNI");
@@ -28,12 +35,34 @@ namespace COVID19
             pacientes.Columns.Add("Estado");
             pacientes.Columns.Add("UltimaModificacion");
 
-            //dataGridViewNombreZoologicos.AutoGenerateColumns = false;
-            //dataGridViewNombreZoologicos.ColumnCount = 2;
+
+
+            pacientesMedicos.Columns.Add("DNI");
+            pacientesMedicos.Columns.Add("NombreCompleto");
+            pacientesMedicos.Columns.Add("Edad");
+            pacientesMedicos.Columns.Add("Sexo");
+            pacientesMedicos.Columns.Add("NumeroCelular");
+            pacientesMedicos.Columns.Add("Distrito");
+            pacientesMedicos.Columns.Add("FechaInternamiento");
+            pacientesMedicos.Columns.Add("Estado");
+            pacientesMedicos.Columns.Add("UltimaModificacion");
+
+
+
 
 
             medicos = new DataTable();
-            //medico = new Medico();
+
+            medicos.Columns.Add("DNI");
+            medicos.Columns.Add("NombreCompleto");
+            medicos.Columns.Add("NumeroColegiatura");
+            medicos.Columns.Add("Edad");
+            medicos.Columns.Add("Sexo");
+            medicos.Columns.Add("Especialidad");
+            medicos.Columns.Add("FechaColegiatura");
+            medicos.Columns.Add("Cantidad Pacientes");
+
+
         }
 
         public void RegistrarPaciente(string dNI, string nombreCompleto, int edad, string sexo, string numeroCelular, string distrito, int fechaInternamiento, string estado, int ultimaModificacion)
@@ -52,6 +81,34 @@ namespace COVID19
                     paciente.Estado,
                     paciente.UltimaModificacion
                );
+
+            pacientesMedicos.Rows.Add(
+                    paciente.DNI,
+                    paciente.NombreCompleto,
+                    paciente.Edad,
+                    paciente.Sexo,
+                    paciente.NumeroCelular,
+                    paciente.Distrito,
+                    paciente.FechaInternamiento,
+                    paciente.Estado,
+                    paciente.UltimaModificacion
+               );
         }
+
+
+
+        public void RegistrarMedico(string dNI, string nombreCompleto, string numeroColegiatura, int edad, string sexo, string especialidad, int fechaColegiatura, List<Paciente> _pacientes)
+        {
+
+            medico = new Medico(dNI, nombreCompleto, numeroColegiatura, edad, sexo, especialidad, fechaColegiatura, _pacientes);
+                        
+            medicos.Rows.Add(
+                     medico.DNI, medico.NombreCompleto, medico.NumeroColegiatura, medico.Edad, medico.Sexo, medico.Especialidad, medico.FechaColegiatura, medico.Pacientes.Count()
+               );
+        }
+
+
+
+
     }
 }
